@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrueFit 3D | Custom 3D Printing, Parts, Gifts & Décor</title>
+  <meta name="description" content="TrueFit 3D provides precision custom 3D printed parts, prototypes, replacement components, and ready-to-ship items like keychains, gifts, and holiday décor." />
+
+  <!-- Open Graph (social previews) -->
+  <meta property="og:title" content="TrueFit 3D" />
+  <meta property="og:description" content="Custom 3D printing: functional parts, prototypes, gifts, and holiday décor." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://truefit3d.com" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1a33;
+      --card:#111f3d;
+      --text:#e9eefc;
+      --muted:#b7c2e6;
+      --accent:#3a7bff;
+      --accent2:#7ad7ff;
+      --border:rgba(255,255,255,.12);
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(58,123,255,.35), transparent 60%),
+        radial-gradient(900px 500px at 85% 0%, rgba(122,215,255,.22), transparent 55%),
+        linear-gradient(180deg, var(--bg), #070b14);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:10px 0 4px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;text-decoration:none;
+    }
+    .logo{
+      width:42px;height:42px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 8px 24px rgba(58,123,255,.25);
+    }
+    .brand strong{display:block;font-size:16px;letter-spacing:.2px}
+    .brand span{display:block;font-size:12px;color:var(--muted)}
+    nav{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{
+      text-decoration:none;color:var(--muted);
+      padding:8px 10px;border-radius:12px;border:1px solid transparent;
+    }
+    nav a:hover{color:var(--text);border-color:var(--border);background:rgba(255,255,255,.03)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;border-radius:14px;border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      text-decoration:none;color:var(--text);
+      box-shadow:none;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent),#2f5fff);
+      border-color:rgba(255,255,255,.18);
+      box-shadow:0 14px 40px rgba(58,123,255,.25);
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .hero{
+      margin-top:18px;
+      display:grid;grid-template-columns: 1.1fr .9fr;gap:20px;align-items:stretch;
+    }
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero-left{padding:28px}
+    h1{margin:0 0 10px;font-size:42px;line-height:1.1;letter-spacing:-.6px}
+    .lead{color:var(--muted);font-size:16px;margin:0 0 18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .badge{
+      font-size:12px;color:var(--muted);
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      padding:8px 10px;border-radius:999px;
+    }
+    .hero-right{padding:18px;display:flex;flex-direction:column;gap:12px}
+    .mini{
+      padding:16px;border-radius:16px;border:1px solid var(--border);
+      background:rgba(17,31,61,.72);
+    }
+    .mini h3{margin:0 0 6px;font-size:14px;letter-spacing:.2px}
+    .mini p{margin:0;color:var(--muted);font-size:13px}
+    .grid{
+      display:grid;gap:14px;
+      grid-template-columns:repeat(12,1fr);
+      margin-top:18px;
+    }
+    .card{
+      grid-column: span 4;
+      padding:18px;border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:rgba(17,31,61,.65);
+    }
+    .card h3{margin:0 0 6px;font-size:15px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+    section{margin-top:26px}
+    .section-title{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+      margin-bottom:12px;
+    }
+    .section-title h2{margin:0;font-size:22px;letter-spacing:-.2px}
+    .section-title p{margin:0;color:var(--muted);font-size:13px}
+    .two{
+      display:grid;gap:14px;grid-template-columns:1fr 1fr;
+    }
+    ul{margin:10px 0 0 18px;color:var(--muted)}
+    .faq details{
+      border:1px solid var(--border);
+      background:rgba(17,31,61,.55);
+      border-radius:14px;
+      padding:12px 14px;
+      margin:10px 0;
+    }
+    .faq summary{cursor:pointer;font-weight:600}
+    .faq p{margin:8px 0 0;color:var(--muted)}
+    .contact{
+      display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    }
+    .contact .mini a{color:var(--text);text-decoration:none}
+    footer{margin:28px 0 10px;color:var(--muted);font-size:12px;text-align:center}
+
+    /* Portfolio placeholders */
+    .gallery{
+      display:grid;gap:10px;grid-template-columns:repeat(3,1fr);
+    }
+    .ph{
+      height:120px;border-radius:14px;border:1px dashed rgba(255,255,255,.25);
+      background:rgba(255,255,255,.02);
+      display:flex;align-items:center;justify-content:center;
+      color:rgba(255,255,255,.55);font-size:12px;
+    }
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(6,1fr)}
+      .card{grid-column:span 6}
+      .two{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      h1{font-size:34px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top" aria-label="TrueFit 3D Home">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <strong>TrueFit 3D</strong>
+          <span>Precision Prints • Functional Parts • Gifts & Décor</span>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#custom">Custom Orders</a>
+        <a href="#materials">Materials</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <div class="panel hero-left">
+        <h1>Custom 3D Printing that fits right the first time.</h1>
+        <p class="lead">
+          We print precision functional parts, prototypes, and replacement components — plus ready-to-ship items like
+          keychains, gifts, and holiday décor. Clean prints, strong materials, fast communication.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="#contact">Request a Quote</a>
+          <a class="btn" href="https://www.etsy.com" target="_blank" rel="noopener">Shop on Etsy</a>
+        </div>
+
+        <div class="badges">
+          <div class="badge">USA-based</div>
+          <div class="badge">Custom + Ready-to-Ship</div>
+          <div class="badge">Prototype to Production</div>
+          <div class="badge">Tight tolerances</div>
+        </div>
+
+        <div class="grid" style="margin-top:18px">
+          <div class="card">
+            <h3>Functional Parts</h3>
+            <p>Brackets, mounts, adapters, enclosures, and replacement pieces built to last.</p>
+          </div>
+          <div class="card">
+            <h3>Gifts & Décor</h3>
+            <p>Keychains, desk items, seasonal décor, and custom designs made with care.</p>
+          </div>
+          <div class="card">
+            <h3>Prototyping</h3>
+            <p>Fast iterations, fit checks, and “print-test-repeat” support for your ideas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel hero-right">
+        <div class="mini">
+          <h3>Need a custom part?</h3>
+          <p>Send a file (STL/STEP) or photos + dimensions. We’ll confirm material, finish, and tolerances.</p>
+        </div>
+        <div class="mini">
+          <h3>Ready-to-ship items</h3>
+          <p>Browse keychains, gifts, and holiday décor on Etsy — or request custom colors/personalization.</p>
+        </div>
+        <div class="mini">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:info@truefit3d.com">info@truefit3d.com</a><br/>
+             Custom quotes: <a href="mailto:sales@truefit3d.com">sales@truefit3d.com</a></p>
+        </div>
+      </div>
+    </main>
+
+    <section id="services">
+      <div class="section-title">
+        <div>
+          <h2>Services</h2>
+          <p>Custom manufacturing + fun prints, all under one brand.</p>
+        </div>
+      </div>
+
+      <div class="two">
+        <div class="mini">
+          <h3>Custom 3D Printing</h3>
+          <p>Best for functional parts, prototypes, jigs, fixtures, and replacement components.</p>
+          <ul>
+            <li>Fit & tolerance guidance</li>
+            <li>Material recommendations</li>
+            <li>Small-batch printing</li>
+          </ul>
+        </div>
+
+        <div class="mini">
+          <h3>Ready-to-Ship Items</h3>
+          <p>Keychains, gifts, décor, and seasonal designs — printed clean and packaged well.</p>
+          <ul>
+            <li>Personalization options</li>
+            <li>Custom colors (when available)</li>
+            <li>Holiday drops</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="custom">
+      <div class="section-title">
+        <div>
+          <h2>How custom orders work</h2>
+          <p>Simple process. Clear communication. No guesswork.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 3;">
+          <h3>1) Send details</h3>
+          <p>STL/STEP preferred. Or photos + dimensions + what it needs to do.</p>
+        </div>
+        <div class="card" style="grid-column: span 3;">
+          <h3>2) Choose material</h3>
+          <p>We’ll recommend based on strength, heat, UV, and environment.</p>
+        </div>
+        <div class="card" style="grid-column: span 3;">
+          <h3>3) Quote & timeline</h3>
+          <p>Pricing based on size, time, material, and finishing needs.</p>
+        </div>
+        <div class="card" style="grid-column: span 3;">
+          <h3>4) Print & ship</h3>
+          <p>Quality checked before packaging. Tracking provided on shipment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="materials">
+      <div class="section-title">
+        <div>
+          <h2>Materials</h2>
+          <p>We’ll guide you — but here’s what we commonly run.</p>
+        </div>
+      </div>
+
+      <div class="two">
+        <div class="mini">
+          <h3>Common materials</h3>
+          <ul>
+            <li>PLA / PLA+ (great for décor, prototypes)</li>
+            <li>PETG (stronger, more heat resistant)</li>
+            <li>TPU (flexible, impact resistant)</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>On request (availability varies)</h3>
+          <ul>
+            <li>ABS / ASA (tough, UV options)</li>
+            <li>Nylon blends (high strength)</li>
+            <li>Carbon fiber blends (stiff, lightweight)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="section-title">
+        <div>
+          <h2>Portfolio</h2>
+          <p>Replace these placeholders with your best photos.</p>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="ph">Add product photo</div>
+        <div class="ph">Add product photo</div>
+        <div class="ph">Add product photo</div>
+        <div class="ph">Add product photo</div>
+        <div class="ph">Add product photo</div>
+        <div class="ph">Add product photo</div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="section-title">
+        <div>
+          <h2>FAQ</h2>
+          <p>Clear answers = fewer back-and-forth messages.</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Do you do custom design / modeling?</summary>
+        <p>We can help with minor edits and print-ready adjustments. For full modeling, we can discuss scope and pricing.</p>
+      </details>
+
+      <details>
+        <summary>What file types do you accept?</summary>
+        <p>STL and STEP are best. We can also work with OBJ and 3MF in many cases.</p>
+      </details>
+
+      <details>
+        <summary>How do you price custom prints?</summary>
+        <p>Pricing is based on material, print time, size, complexity, and any finishing. We’ll provide a quote before printing.</p>
+      </details>
+
+      <details>
+        <summary>Can I order ready-to-ship items?</summary>
+        <p>Yes — browse our Etsy shop for keychains, gifts, décor, and seasonal items. Custom colors/personalization may be available.</p>
+      </details>
+
+      <details>
+        <summary>Do you offer bulk or repeat orders?</summary>
+        <p>Yes. If you need multiple units, we can optimize settings and pricing for small-batch runs.</p>
+      </details>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <div>
+          <h2>Contact</h2>
+          <p>Fast response. Clear questions. Clean results.</p>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="mini">
+          <h3>Email</h3>
+          <p>
+            Quotes: <a href="mailto:sales@truefit3d.com">sales@truefit3d.com</a><br/>
+            General: <a href="mailto:info@truefit3d.com">info@truefit3d.com</a>
+          </p>
+          <p style="margin-top:10px;color:var(--muted);font-size:13px">
+            Include: file link, quantity, material preference (if any), and target use case.
+          </p>
+        </div>
+
+        <div class="mini">
+          <h3>Links</h3>
+          <p>
+            Etsy: <a href="https://www.etsy.com" target="_blank" rel="noopener">TrueFit3DShopUS</a><br/>
+            Domain: <a href="https://truefit3d.com" target="_blank" rel="noopener">truefit3d.com</a>
+          </p>
+          <p style="margin-top:10px;color:var(--muted);font-size:13px">
+            Add Instagram/Facebook links here when you claim them.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> TrueFit 3D • truefit3d.com • All rights reserved
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
