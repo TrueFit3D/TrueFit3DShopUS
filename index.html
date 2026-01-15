@@ -64,13 +64,14 @@
       background:rgba(255,255,255,.04);
       text-decoration:none;color:var(--text);
       box-shadow:none;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),#2f5fff);
       border-color:rgba(255,255,255,.18);
       box-shadow:0 14px 40px rgba(58,123,255,.25);
     }
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.22)}
     .hero{
       margin-top:18px;
       display:grid;grid-template-columns: 1.1fr .9fr;gap:20px;align-items:stretch;
@@ -139,15 +140,37 @@
     .contact .mini a{color:var(--text);text-decoration:none}
     footer{margin:28px 0 10px;color:var(--muted);font-size:12px;text-align:center}
 
-    /* Portfolio placeholders */
-    .gallery{
-      display:grid;gap:10px;grid-template-columns:repeat(3,1fr);
+    /* Product gallery */
+    .product-grid{
+      display:grid;
+      gap:14px;
+      grid-template-columns:repeat(3,1fr);
     }
-    .ph{
-      height:120px;border-radius:14px;border:1px dashed rgba(255,255,255,.25);
-      background:rgba(255,255,255,.02);
-      display:flex;align-items:center;justify-content:center;
-      color:rgba(255,255,255,.55);font-size:12px;
+    .product-card{
+      display:block;
+      text-decoration:none;
+      color:inherit;
+      border:1px solid var(--border);
+      background:rgba(17,31,61,.65);
+      border-radius:var(--radius);
+      overflow:hidden;
+      transition:transform .15s ease, border-color .15s ease;
+    }
+    .product-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(255,255,255,.22);
+    }
+    .product-card img{
+      width:100%;
+      height:200px;
+      object-fit:contain;
+      background:rgba(0,0,0,.25);
+      display:block;
+    }
+    .product-title{
+      padding:12px 12px 14px;
+      font-weight:600;
+      font-size:0.95rem;
     }
 
     @media (max-width: 900px){
@@ -157,6 +180,9 @@
       .two{grid-template-columns:1fr}
       .contact{grid-template-columns:1fr}
       h1{font-size:34px}
+
+      .product-grid{ grid-template-columns:1fr; }
+      .product-card img{ height:220px; }
     }
   </style>
 </head>
@@ -192,6 +218,7 @@
 
         <div class="cta">
           <a class="btn primary" href="#contact">Request a Quote</a>
+          <!-- Replace this Etsy link with your real shop URL when ready -->
           <a class="btn" href="https://www.etsy.com/shop/TrueFit3DShopUS" target="_blank" rel="noopener">Shop on Etsy</a>
         </div>
 
@@ -326,17 +353,45 @@
       <div class="section-title">
         <div>
           <h2>Portfolio</h2>
-          <p>Replace these placeholders with your best photos.</p>
+          <p>Some recent prints — keychains, gifts, and fun articulating designs.</p>
         </div>
       </div>
 
-      <div class="gallery">
-        <div class="ph">Add product photo</div>
-        <div class="ph">Add product photo</div>
-        <div class="ph">Add product photo</div>
-        <div class="ph">Add product photo</div>
-        <div class="ph">Add product photo</div>
-        <div class="ph">Add product photo</div>
+      <!--
+        IMPORTANT:
+        Upload the images to your repo so these paths exist:
+        /assets/products/... and /assets/products/thumbs/...
+      -->
+      <div class="product-grid">
+        <a class="product-card" href="assets/products/blue-dino.png" target="_blank" rel="noopener">
+          <img src="assets/products/thumbs/blue-dino.png" alt="Articulated Dino Keychain" loading="lazy" />
+          <div class="product-title">Articulated Dino Keychain</div>
+        </a>
+
+        <a class="product-card" href="assets/products/dinos.png" target="_blank" rel="noopener">
+          <img src="assets/products/thumbs/dinos.png" alt="Dino Keychain Variety Pack" loading="lazy" />
+          <div class="product-title">Dino Keychain Variety Pack</div>
+        </a>
+
+        <a class="product-card" href="assets/products/jacy-singlet.png" target="_blank" rel="noopener">
+          <img src="assets/products/thumbs/jacy-singlet.png" alt="Personalized Singlet Keychain" loading="lazy" />
+          <div class="product-title">Personalized Singlet Keychain</div>
+        </a>
+
+        <a class="product-card" href="assets/products/red-green-dinos.png" target="_blank" rel="noopener">
+          <img src="assets/products/thumbs/red-green-dinos.png" alt="Red and Green Dino Set" loading="lazy" />
+          <div class="product-title">Red & Green Dino Set</div>
+        </a>
+
+        <a class="product-card" href="assets/products/snake.png" target="_blank" rel="noopener">
+          <img src="assets/products/thumbs/snake.png" alt="Articulated Snake Keychain" loading="lazy" />
+          <div class="product-title">Articulated Snake Keychain</div>
+        </a>
+
+        <a class="product-card" href="assets/products/unicorn.png" target="_blank" rel="noopener">
+          <img src="assets/products/thumbs/unicorn.png" alt="Unicorn Keychain" loading="lazy" />
+          <div class="product-title">Unicorn Keychain</div>
+        </a>
       </div>
     </section>
 
@@ -397,7 +452,8 @@
         <div class="mini">
           <h3>Links</h3>
           <p>
-            Etsy: <a href="https://www.etsy.com" target="_blank" rel="noopener">TrueFit3DShopUS</a><br/>
+            <!-- Replace Etsy link with your real shop URL -->
+            Etsy: <a href="https://www.etsy.com/shop/TrueFit3DShopUS/" target="_blank" rel="noopener">TrueFit3DShopUS</a><br/>
             Domain: <a href="https://truefit3d.com" target="_blank" rel="noopener">truefit3d.com</a>
           </p>
           <p style="margin-top:10px;color:var(--muted);font-size:13px">
